@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(connection(mysql, dbOptions, 'request'));
 
 app.use('/', index);
 app.use('/users', users);
@@ -56,7 +57,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.use(connection(mysql, dbOptions, 'request'));
+
 
 // app.use(
 //     connection(mysql,{
