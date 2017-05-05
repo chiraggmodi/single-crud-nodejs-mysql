@@ -1,0 +1,78 @@
+extends layout
+
+block content
+  h1.text-center.mt-3= title
+  p.text-center.mt-3.text-muted Welcome #{secondaryTitle}
+  .container
+    if (profiles.length)
+      .card.mt-5
+        h3.card-header #{profiles[0].first_name}
+          if (profiles[0].last_name.length)
+            = ', ' 
+          = profiles[0].last_name
+        .card-block
+          if (profiles[0].email.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal Email ID:
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].email
+          if (profiles[0].phone.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal Phone Number
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].phone
+          if (profiles[0].street_address.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal Street Address
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].street_address
+          if (profiles[0].steet_address_2.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal Street Address 2
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].steet_address_2
+          if (profiles[0].city.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal City
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].city
+          if (profiles[0].state.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal State
+              .col-sm-10
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].state
+          if (profiles[0].country.length)
+            .row.mt-3
+              .col-sm-2
+                p.card-text.font-weight-bold
+                  span.d-sm-block.text-gray-dark.font-weight-normal Country
+              .col-sm-10 
+                p.card-text.font-weight-bold.font-italic
+                  = profiles[0].country
+          if (profiles[0].country.length == 0 && profiles[0].state.length == 0  && profiles[0].city.length == 0 && profiles[0].street_address.length == 0  && profiles[0].steet_address_2.length == 0 && profiles[0].phone.length == 0  && profiles[0].email.length == 0 )
+            p.card-text.font-weight-bold.text-center
+              .alert.alert-success(role='alert') #[strong No Data Available] 
+          .mt-5
+            a.card-link(href='/profiles/edit/'+profiles[0].id) Edit Profile
+            a.card-link(href='/profiles/delete/'+profiles[0].id) Delete Profile
+        .card-footer.text-muted= profiles[0].profile_create
+    else
+      h3 No Profile Created

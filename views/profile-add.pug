@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  h1.text-center.mt-3= title
+  p.text-center.mt-3 #{secondaryTitle}
+  .container
+    form(method='post', action='/profiles/add').pt-3
+      .row
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='first_name') First Name
+            input.form-control(type='text', placeholder='First Name', id='first_name', name='first_name')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='last_name') Last Name
+            input.form-control(type='text', placeholder='Last Name', id='last_name', name='last_name')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='email') Email Address
+            input.form-control(type='text', placeholder='Email Address', id='email', name='email')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='phone') Phone Number
+            input.form-control(type='text', placeholder='Phone Number', id='phone', name='phone')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='street_address') Street Address
+            input.form-control(type='text', placeholder='Street Address', id='street_address', name='street_address')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='steet_address_2') Street Address 2
+            input.form-control(type='text', placeholder='Street Address 2', id='steet_address_2', name='steet_address_2')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='city') City
+            input.form-control(type='text', placeholder='City', id='city', name='city')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='state') State
+            input.form-control(type='text', placeholder='State', id='state', name='state')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='country') Country
+            input.form-control(type='text', placeholder='Country', id='country', name='country')
+        .col-sm-6
+          .form-group
+            input.form-control(type='hidden', placeholder='Profile Create', id='profile_create', name='profile_create', value=moment().format("YYYY-MM-DD k:mm:ss"))
+        .col-sm-6
+      button.btn.btn-primary.col-sm-2(type='submit') Submit

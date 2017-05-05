@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  h1.text-center.mt-3= title
+  p.text-center.mt-3 Welcome to #{secondaryTitle}
+  .container
+    form(method='post', action='/profiles/edit/'+profiles[0].id).pt-3
+      .row
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='first_name') First Name
+            input.form-control(type='text', value=profiles[0].first_name, placeholder='First Name', id='first_name', name='first_name')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='last_name') Last Name
+            input.form-control(type='text', value=profiles[0].last_name, placeholder='Last Name', id='last_name', name='last_name')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='email') Email Address
+            input.form-control(type='text',value=profiles[0].email, placeholder='Email Address', id='email', name='email')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='phone') Phone Number
+            input.form-control(type='text',value=profiles[0].phone, placeholder='Phone Number', id='phone', name='phone')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='street_address') Street Address
+            input.form-control(type='text',value=profiles[0].street_address, placeholder='Street Address', id='street_address', name='street_address')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='steet_address_2') Street Address 2
+            input.form-control(type='text',value=profiles[0].steet_address_2, placeholder='Street Address 2', id='steet_address_2', name='steet_address_2')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='city') City
+            input.form-control(type='text',value=profiles[0].city, placeholder='City', id='city', name='city')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='state') State
+            input.form-control(type='text',value=profiles[0].state, placeholder='State', id='state', name='state')
+        .col-sm-6
+          .form-group
+            label.col-form-label.mb-2(for='country') Country
+            input.form-control(type='text',value=profiles[0].country, placeholder='Country', id='country', name='country')
+        .col-sm-6
+      button.btn.btn-primary.col-sm-2(type='submit') Submit

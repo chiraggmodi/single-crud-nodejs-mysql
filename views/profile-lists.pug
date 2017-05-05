@@ -1,0 +1,58 @@
+extends layout
+
+block content
+  h1.text-center.mt-3= title
+  p.text-center.mt-3 #{secondaryTitle}
+  .container
+    - var messages = getMessages()
+    if messages.success
+        .alert.alert-success(role='alert') #[strong Well done!] !{messages.success}
+    if messages.warning
+        .alert.alert-danger(role='alert') #[strong Oh snap!] !{messages.warning}
+    .row
+      if (profiles.length)
+        each profile, i in profiles
+          .col-sm-4.mt-3
+            .card
+              h3.card-header #{profile.first_name}
+                if (profile.last_name.length)
+                  = ', ' 
+                = profile.last_name
+              .card-block 
+                if (profile.email.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal Email ID
+                    = profile.email
+                if (profile.phone.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal Phone Number
+                    = profile.phone
+                if (profile.street_address.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal Street Address
+                    = profile.street_address
+                if (profile.steet_address_2.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal Street Address 2
+                    = profile.steet_address_2    
+                if (profile.city.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal City
+                    = profile.city      
+                if (profile.state.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal State
+                    = profile.state   
+                if (profile.country.length)
+                  p.card-text.font-weight-bold.font-italic
+                    span.d-sm-block.text-gray-dark.font-weight-normal Country
+                    = profile.country
+                if (profile.country.length == 0 && profile.state.length == 0  && profile.city.length == 0 && profile.street_address.length == 0  && profile.steet_address_2.length == 0 && profile.phone.length == 0  && profile.email.length == 0 )
+                  p.card-text.font-weight-bold.text-center
+                    .alert.alert-success(role='alert') #[strong No Data Available]
+                a.card-link(href='../profiles/edit/'+profile.id) Edit Profile
+                a.card-link(href='../profiles/delete/'+profile.id) Delete Profile
+                a.card-link(href='../profiles/view/'+profile.id) View Profile
+              .card-footer.text-muted= profile.profile_create
+      else
+        h3 No Profile Created
