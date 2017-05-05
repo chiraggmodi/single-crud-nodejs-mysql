@@ -51,7 +51,7 @@ block content
                   p.card-text.font-weight-bold.text-center
                     .alert.alert-success(role='alert') #[strong No Data Available]
                 a.card-link(href='../profiles/edit/'+profile.id) Edit Profile
-                a.card-link(href='../profiles/delete/'+profile.id) Delete Profile
+                a.card-link(href='javascript:void(0);', onclick="confimrDelete(" + profile.id + ")") Delete Profile
                 a.card-link(href='../profiles/view/'+profile.id) View Profile
               .card-footer.text-muted= profile.profile_create
       else

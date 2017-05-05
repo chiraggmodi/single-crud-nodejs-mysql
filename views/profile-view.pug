@@ -72,7 +72,7 @@ block content
               .alert.alert-success(role='alert') #[strong No Data Available] 
           .mt-5
             a.card-link(href='/profiles/edit/'+profiles[0].id) Edit Profile
-            a.card-link(href='/profiles/delete/'+profiles[0].id) Delete Profile
+            a.card-link(href='javascript:void(0);', onclick="confimrDelete("+ profiles[0].id +")") Delete Profile
         .card-footer.text-muted= profiles[0].profile_create
     else
       h3 No Profile Created
