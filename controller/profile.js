@@ -63,7 +63,7 @@ exports.save = function(req, res){
       email: input.email,
       phone: input.phone,
       street_address: input.street_address,
-      steet_address_2: input.steet_address_2,
+      street_address_2: input.street_address_2,
       city: input.city,
       state: input.state,
       country: input.country
@@ -94,7 +94,7 @@ exports.save_edit = function(req, res){
       email: input.email,
       phone: input.phone,
       street_address: input.street_address,
-      steet_address_2: input.steet_address_2,
+      street_address_2: input.street_address_2,
       city: input.city,
       state: input.state,
       country: input.country

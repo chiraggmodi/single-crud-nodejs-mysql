@@ -31,10 +31,10 @@ block content
                   p.card-text.font-weight-bold.font-italic
                     span.d-sm-block.text-gray-dark.font-weight-normal Street Address
                     = profile.street_address
-                if (profile.steet_address_2.length)
+                if (profile.street_address_2.length)
                   p.card-text.font-weight-bold.font-italic
                     span.d-sm-block.text-gray-dark.font-weight-normal Street Address 2
-                    = profile.steet_address_2    
+                    = profile.street_address_2    
                 if (profile.city.length)
                   p.card-text.font-weight-bold.font-italic
                     span.d-sm-block.text-gray-dark.font-weight-normal City
@@ -47,7 +47,7 @@ block content
                   p.card-text.font-weight-bold.font-italic
                     span.d-sm-block.text-gray-dark.font-weight-normal Country
                     = profile.country
-                if (profile.country.length == 0 && profile.state.length == 0  && profile.city.length == 0 && profile.street_address.length == 0  && profile.steet_address_2.length == 0 && profile.phone.length == 0  && profile.email.length == 0 )
+                if (profile.country.length == 0 && profile.state.length == 0  && profile.city.length == 0 && profile.street_address.length == 0  && profile.street_address_2.length == 0 && profile.phone.length == 0  && profile.email.length == 0 )
                   p.card-text.font-weight-bold.text-center
                     .alert.alert-success(role='alert') #[strong No Data Available]
                 a.card-link(href='../profiles/edit/'+profile.id) Edit Profile

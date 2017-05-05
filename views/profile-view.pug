@@ -35,14 +35,14 @@ block content
               .col-sm-10
                 p.card-text.font-weight-bold.font-italic
                   = profiles[0].street_address
-          if (profiles[0].steet_address_2.length)
+          if (profiles[0].street_address_2.length)
             .row.mt-3
               .col-sm-2
                 p.card-text.font-weight-bold
                   span.d-sm-block.text-gray-dark.font-weight-normal Street Address 2
               .col-sm-10
                 p.card-text.font-weight-bold.font-italic
-                  = profiles[0].steet_address_2
+                  = profiles[0].street_address_2
           if (profiles[0].city.length)
             .row.mt-3
               .col-sm-2
@@ -67,7 +67,7 @@ block content
               .col-sm-10 
                 p.card-text.font-weight-bold.font-italic
                   = profiles[0].country
-          if (profiles[0].country.length == 0 && profiles[0].state.length == 0  && profiles[0].city.length == 0 && profiles[0].street_address.length == 0  && profiles[0].steet_address_2.length == 0 && profiles[0].phone.length == 0  && profiles[0].email.length == 0 )
+          if (profiles[0].country.length == 0 && profiles[0].state.length == 0  && profiles[0].city.length == 0 && profiles[0].street_address.length == 0  && profiles[0].street_address_2.length == 0 && profiles[0].phone.length == 0  && profiles[0].email.length == 0 )
             p.card-text.font-weight-bold.text-center
               .alert.alert-success(role='alert') #[strong No Data Available] 
           .mt-5
